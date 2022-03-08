@@ -6,9 +6,9 @@ import com.weather.Forecaster;
 import com.weather.Region;
 
 import java.time.DayOfWeek;
-import java.util.Locale;
 
 public class Adapter implements Weather{
+
 
   private final Forecaster forecaster = new Forecaster();
 
