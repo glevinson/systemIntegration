@@ -33,5 +33,7 @@ public class Cache implements Weather {
 
   private Tuple<Location, DayOfWeek> oldestKey() {
     return weatherQueries.keySet().iterator().next();
+
+
   }
 }

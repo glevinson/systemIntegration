@@ -1,4 +1,4 @@
-package ic.doc;
+package ic.doc.third.party;
 
 import com.weather.Day;
 import com.weather.Forecast;
