@@ -22,8 +22,7 @@ public class Cache implements Weather {
       return result;
     }
     if ( weatherQueries.size() == maxCacheSize ){
-      Tuple<Location, DayOfWeek> oldestKey = oldestKey();
-      weatherQueries.remove( oldestKey );
+      // add remove function here
     }
     result = this.forecaster.temperatureFor(location, day);
     weatherQueries.put(query, result);
