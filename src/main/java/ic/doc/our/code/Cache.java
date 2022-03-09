@@ -1,7 +1,6 @@
 package ic.doc.our.code;
-
 import java.time.DayOfWeek;
-import java.util.LinkedHashMap;
+import java.util.HashMap;
 import java.util.Map;
 
 public class Cache implements Weather {
@@ -9,7 +8,7 @@ public class Cache implements Weather {
   private final Weather forecaster;
   private final Integer maxCacheSize = 10;
 
-  private Map<Tuple<Location, DayOfWeek>, Integer> weatherQueries = new LinkedHashMap<>();
+  private Map<Tuple<Location, DayOfWeek>, Integer> weatherQueries = new HashMap<>();
 
   public Cache(Weather forecaster) {
     this.forecaster = forecaster;
@@ -31,13 +30,4 @@ public class Cache implements Weather {
     return result;
   }
 
-  private Tuple<Location, DayOfWeek> oldestKey() {
-    return weatherQueries.keySet().iterator().next();
-
-
-
-
-
-
-  }
 }

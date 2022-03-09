@@ -9,7 +9,6 @@ import java.time.DayOfWeek;
 
 public class Adapter implements Weather{
 
-
   private final Forecaster forecaster = new Forecaster();
 
   @Override

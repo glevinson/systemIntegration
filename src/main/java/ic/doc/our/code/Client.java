@@ -1,7 +1,4 @@
 package ic.doc.our.code;
-
-import com.weather.Forecaster;
-
 import java.time.DayOfWeek;
 
 public class Client {
@@ -11,6 +8,6 @@ public class Client {
 
     int temp = cache.temperatureFor(new Location("London"), DayOfWeek.MONDAY);
 
-    System.out.println("On London it will be  " + temp + " in London");
+    System.out.println("On Monday it will be  " + temp + " in London");
   }
 }
