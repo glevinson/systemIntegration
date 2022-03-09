@@ -1,4 +1,4 @@
-package ic.doc.our.code;
+package ic.doc;
 
 import java.time.DayOfWeek;
 

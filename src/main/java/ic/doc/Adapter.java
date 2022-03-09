@@ -1,7 +1,6 @@
-package ic.doc.our.code;
+package ic.doc;
 
 import com.weather.Day;
-import com.weather.Forecast;
 import com.weather.Forecaster;
 import com.weather.Region;
 

@@ -1,4 +1,4 @@
-package ic.doc.our.code;
+package ic.doc;
 import java.time.DayOfWeek;
 import java.util.HashMap;
 import java.util.Map;
@@ -19,10 +19,8 @@ public class Cache implements Weather {
     Tuple<Location, DayOfWeek> query = new Tuple<>(location, day);
     Integer result = weatherQueries.get(query);
     if (result != null) {
-      System.out.println("Did use cache");
       return result;
     }
-    System.out.println("Did not use cache");
     if ( weatherQueries.size() == maxCacheSize ){
       // add remove function here
     }
