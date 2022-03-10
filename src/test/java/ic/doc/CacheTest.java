@@ -54,13 +54,19 @@ public class CacheTest {
       exactly(1).of(weather).temperatureFor(query3);
     }});
 
+    // Calls query 1, 2, and 3, to show that then the cache will
+    // only have query 2 and 3 stored, meaning that tempfor will not
+    // be called for those queries again because they are in the cache
+    // When query 1 is called again it is not in the cache and
+    // therefore tempfor is called again
+
     Cache cache = new Cache(weather);
-    int temp1 = cache.temperatureFor(query);
-    int temp2 = cache.temperatureFor(query2);
-    int temp3 = cache.temperatureFor(query3);
-    int temp4 = cache.temperatureFor(query2);
-    int temp5 = cache.temperatureFor(query3);
-    int temp6 = cache.temperatureFor(query);
+    cache.temperatureFor(query);
+    cache.temperatureFor(query2);
+    cache.temperatureFor(query3);
+    cache.temperatureFor(query2);
+    cache.temperatureFor(query3);
+    cache.temperatureFor(query);
 
   }
 
