@@ -6,7 +6,7 @@ import com.weather.Region;
 
 import java.time.DayOfWeek;
 
-public class Adapter implements Weather{
+public class Adapter implements Weather {
 
   private final Forecaster forecaster = new Forecaster();
 
@@ -20,5 +20,4 @@ public class Adapter implements Weather{
     Day forecastDay = Day.valueOf(day.name().toUpperCase());
     return this.forecaster.forecastFor(region, forecastDay).temperature();
   }
-
 }

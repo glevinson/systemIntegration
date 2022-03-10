@@ -1,8 +1,9 @@
 package ic.doc;
+
 import java.time.DayOfWeek;
 
 public class Client {
-  public static void main(String[] args){
+  public static void main(String[] args) {
 
     Cache cache = new Cache(new Adapter(), 5);
     Location london = new Location("London");
@@ -14,6 +15,5 @@ public class Client {
 
     int temp2 = cache.temperatureFor(query);
     System.out.println("On Monday it will be  " + temp2 + " in London");
-
   }
 }
