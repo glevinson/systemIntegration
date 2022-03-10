@@ -8,13 +8,14 @@ import java.util.Map;
 public class Cache implements Weather {
 
   private Weather forecaster;
-  private final Integer maxCacheSize = 2;
+  private final Integer maxCacheSize;
 
   Map<Tuple<Location, Integer>, Integer> weatherQueries = new HashMap<Tuple<Location, Integer>, Integer>();
   ArrayList<Tuple> keys = new ArrayList<>();
 
-  public Cache(Weather forecaster) {
+  public Cache(Weather forecaster, Integer maxSize) {
     this.forecaster = forecaster;
+    this.maxCacheSize = maxSize;
   }
 
   @Override

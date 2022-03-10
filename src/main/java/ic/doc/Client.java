@@ -4,7 +4,7 @@ import java.time.DayOfWeek;
 public class Client {
   public static void main(String[] args){
 
-    Cache cache = new Cache(new Adapter());
+    Cache cache = new Cache(new Adapter(), 5);
     Location london = new Location("London");
 
     Tuple<Location, DayOfWeek> query = new Tuple<>(london, DayOfWeek.MONDAY);

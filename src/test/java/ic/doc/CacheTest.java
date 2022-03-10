@@ -29,7 +29,7 @@ public class CacheTest {
     context.checking(new Expectations(){{
       exactly(1).of(weather).temperatureFor(query);
     }});
-    Cache cache = new Cache(weather);
+    Cache cache = new Cache(weather, 4);
     cache.temperatureFor(query);
     cache.temperatureFor(query);
   }
@@ -37,7 +37,7 @@ public class CacheTest {
   @Test
   public void cacheReturnsCachedValue(){
 
-    Cache cache = new Cache(new Adapter());
+    Cache cache = new Cache(new Adapter(), 5);
     int temp1 = cache.temperatureFor(query);
     int temp2 = cache.temperatureFor(query);
 
@@ -60,7 +60,7 @@ public class CacheTest {
     // When query 1 is called again it is not in the cache and
     // therefore tempfor is called again
 
-    Cache cache = new Cache(weather);
+    Cache cache = new Cache(weather, 2);
     cache.temperatureFor(query);
     cache.temperatureFor(query2);
     cache.temperatureFor(query3);
