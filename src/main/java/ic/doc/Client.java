@@ -5,12 +5,14 @@ public class Client {
   public static void main(String[] args){
 
     Cache cache = new Cache(new Adapter());
+    Location london = new Location("London");
 
-    int temp = cache.temperatureFor(new Location("London"), DayOfWeek.MONDAY);
-    int temp2 = cache.temperatureFor(new Location("London"), DayOfWeek.MONDAY);
+    Tuple<Location, DayOfWeek> query = new Tuple<>(london, DayOfWeek.MONDAY);
 
-
+    int temp = cache.temperatureFor(query);
     System.out.println("On Monday it will be  " + temp + " in London");
+
+    int temp2 = cache.temperatureFor(query);
     System.out.println("On Monday it will be  " + temp2 + " in London");
 
   }

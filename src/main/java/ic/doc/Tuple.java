@@ -10,4 +10,13 @@ public class Tuple < A, B > {
     this.element_a = element_a;
     this.element_b = element_b;
   }
+
+
+  public A getElement_a() {
+    return element_a;
+  }
+
+  public B getElement_b() {
+    return element_b;
+  }
 }

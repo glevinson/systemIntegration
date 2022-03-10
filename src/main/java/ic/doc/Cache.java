@@ -1,32 +1,47 @@
 package ic.doc;
 import java.time.DayOfWeek;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Cache implements Weather {
 
-  private final Weather forecaster;
-  private final Integer maxCacheSize = 10;
+  private Weather forecaster;
+  private final Integer maxCacheSize = 2;
 
-  private Map<Tuple<Location, DayOfWeek>, Integer> weatherQueries = new HashMap<>();
+  Map<Tuple<Location, Integer>, Integer> weatherQueries = new HashMap<Tuple<Location, Integer>, Integer>();
+  ArrayList<Tuple> keys = new ArrayList<>();
 
   public Cache(Weather forecaster) {
     this.forecaster = forecaster;
   }
 
   @Override
-  public int temperatureFor(Location location, DayOfWeek day) {
-    Tuple<Location, DayOfWeek> query = new Tuple<>(location, day);
+  public int temperatureFor(Tuple query) {
+
     Integer result = weatherQueries.get(query);
+
     if (result != null) {
       return result;
     }
+
     if ( weatherQueries.size() == maxCacheSize ){
-      // add remove function here
+      removeOldest();
     }
-    result = this.forecaster.temperatureFor(location, day);
+
+
+    result = this.forecaster.temperatureFor(query);
     weatherQueries.put(query, result);
+    keys.add(query);
+
+
     return result;
+  }
+
+  public void removeOldest(){
+    weatherQueries.remove(keys.get(0));
+    keys.remove(0);
   }
 
 }
