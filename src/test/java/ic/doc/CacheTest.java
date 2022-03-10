@@ -72,12 +72,11 @@ public class CacheTest {
   }
 
   @Test
-  public void adapterGivesReasonableWeather(){
+  public void adapterGivesReasonableWeather() {
     Adapter adapter = new Adapter();
 
     Integer test = adapter.temperatureFor(query);
 
-    assertTrue( test > 0 && test < 30);
+    assertTrue(test > 0 && test < 30);
   }
-
 }
