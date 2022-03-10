@@ -2,19 +2,19 @@ package ic.doc;
 
 public class Tuple<A, B> {
 
-  private final A element_a;
-  private final B element_b;
+  private final A elementA;
+  private final B elementB;
 
-  public Tuple(A element_a, B element_b) {
-    this.element_a = element_a;
-    this.element_b = element_b;
+  public Tuple(A elementA, B elementB) {
+    this.elementA = elementA;
+    this.elementB = elementB;
   }
 
-  public A getElement_a() {
-    return element_a;
+  public A getElementA() {
+    return elementA;
   }
 
-  public B getElement_b() {
-    return element_b;
+  public B getElementB() {
+    return elementB;
   }
 }

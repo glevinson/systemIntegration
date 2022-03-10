@@ -13,8 +13,8 @@ public class Adapter implements Weather {
   @Override
   public int temperatureFor(Tuple query) {
 
-    Location location = (Location) query.getElement_a();
-    DayOfWeek day = (DayOfWeek) query.getElement_b();
+    Location location = (Location) query.getElementA();
+    DayOfWeek day = (DayOfWeek) query.getElementB();
 
     Region region = Region.valueOf(location.name().toUpperCase());
     Day forecastDay = Day.valueOf(day.name().toUpperCase());
