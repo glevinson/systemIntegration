@@ -8,6 +8,7 @@ import org.junit.Test;
 import java.time.DayOfWeek;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class CacheTest {
 
@@ -69,4 +70,14 @@ public class CacheTest {
     cache.temperatureFor(query3);
     cache.temperatureFor(query);
   }
+
+  @Test
+  public void adapterGivesReasonableWeather(){
+    Adapter adapter = new Adapter();
+
+    Integer test = adapter.temperatureFor(query);
+
+    assertTrue( test > 0 && test < 30);
+  }
+
 }
